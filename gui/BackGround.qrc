@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="GreenPass">
+    <file>Images/Background.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>Images/WHITE.jpg</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>Images/coronavirus-2.jpg</file>
+  </qresource>
+</RCC>
