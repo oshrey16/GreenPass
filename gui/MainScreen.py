@@ -11,16 +11,34 @@ from AddGreenPass import Ui_AddGreenPass
 # from GetGreenPass import Ui_GetLicense
 from RenewGreenPass import *
 from AllGreenPasses import *
-from web3 import Web3
+from GetGreenPass import *
 import BackGround
 
 class Ui_GreenPass(object):
-    def openAddlicense(self):
+    def openAddGreenPass(self):
         self.window=QtWidgets.QMainWindow()
         self.uiNew=Ui_AddGreenPass()
         self.uiNew.setupUi(self.window)
         self.window.show()
+
+    def openGetGreenPass(self):
+        self.window=QtWidgets.QMainWindow()
+        self.uiNew=Ui_GetGreenPass()
+        self.uiNew.setupUi(self.window)
+        self.window.show()
     
+    def openRenewGreenPass(self):
+        self.window=QtWidgets.QMainWindow()
+        self.uiNew=Ui_RenewGreenPass()
+        self.uiNew.setupUi(self.window)
+        self.window.show()
+    
+    def openAllGreenPass(self):
+        self.window=QtWidgets.QMainWindow()
+        self.uiNew=Ui_AllGreenPasses()
+        self.uiNew.setupUi(self.window)
+        self.window.show()
+
     def setupUi(self, GreenPass):
         GreenPass.setObjectName("GreenPass")
         GreenPass.resize(757, 518)
@@ -62,7 +80,7 @@ class Ui_GreenPass(object):
         self.AddGreenPass.setChecked(False)
         self.AddGreenPass.setAutoDefault(False)
         self.AddGreenPass.setObjectName("AddGreenPass")
-        self.AddGreenPass.clicked.connect(self.openAddlicense)
+        self.AddGreenPass.clicked.connect(self.openAddGreenPass)
         # ------------------------GET GreenPass BUTTON------------------------
         self.GetGreenPass = QtWidgets.QPushButton(self.widget)
         self.GetGreenPass.setGeometry(QtCore.QRect(260, 150, 261, 61))
@@ -78,6 +96,7 @@ class Ui_GreenPass(object):
         self.GetGreenPass.setCheckable(False)
         self.GetGreenPass.setChecked(False)
         self.GetGreenPass.setObjectName("GetGreenPass")
+        self.GetGreenPass.clicked.connect(self.openGetGreenPass)
         # ------------------------RENEW GreenPass BUTTON------------------------
         self.RenewGreenPass = QtWidgets.QPushButton(self.widget)
         self.RenewGreenPass.setGeometry(QtCore.QRect(260, 270, 261, 61))
@@ -93,7 +112,7 @@ class Ui_GreenPass(object):
         self.RenewGreenPass.setCheckable(False)
         self.RenewGreenPass.setChecked(False)
         self.RenewGreenPass.setObjectName("RenewGreenPass")
-        #  TODO self.RenewGreenPass.clicked.connect(self.openGetLicense)
+        self.RenewGreenPass.clicked.connect(self.openRenewGreenPass)
         # ------------------------All GreenPass BUTTON------------------------
         self.ShowAllGreenPass = QtWidgets.QPushButton(self.widget)
         self.ShowAllGreenPass.setGeometry(QtCore.QRect(260, 390, 261, 61))
@@ -112,8 +131,9 @@ class Ui_GreenPass(object):
         GreenPass.setCentralWidget(self.widget)
         self.statusbar = QtWidgets.QStatusBar(GreenPass)
         self.statusbar.setObjectName("statusbar")
-        GreenPass.setStatusBar(self.statusbar)
+        self.ShowAllGreenPass.clicked.connect(self.openAllGreenPass)
 
+        GreenPass.setStatusBar(self.statusbar)
         self.retranslateUi(GreenPass)
         QtCore.QMetaObject.connectSlotsByName(GreenPass)
 

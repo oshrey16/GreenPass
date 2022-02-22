@@ -2,15 +2,14 @@
 
 # Form implementation generated from reading ui file 'RenewGreenPass.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.12
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import web3_interface
-from datetime import datetime, date
 
-class Ui_RenewGreenPass(object):
+
+class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(604, 246)
@@ -50,21 +49,5 @@ class Ui_RenewGreenPass(object):
         Form.setWindowTitle(_translate("Form", "RenewGreenPass"))
         self.pushButton.setText(_translate("Form", "Deploy"))
         self.ID.setText(_translate("Form", "ID :"))
-    
 
-    expiration_date = 0
-    def set_expiration(_date):
-        global expiration_date
-        print(f'{_date}')
-        now = datetime.now()
-        now = date(now.year, now.month, now.day)
-        selected = date(_date.year(), _date.month(), _date.day())
-        print(f'now = {now}\n'
-              f'selected = {selected}')
-        expiration_date = (selected - now).days
-        print(f'expiration: {expiration_date}')
 
-    def renewGreenPass(self):
-        id = self.enterID.text()
-        id = int(id)
-        web3_interface.renew_green_pass(id)

@@ -42,4 +42,3 @@ class Ui_Error(object):
         self.pushButton.setText(_translate("Error", "Close"))
         self.ErrorMsg.setText(_translate("Error", "You don\'t have the permission\n"
 "         to add a green pass"))
-

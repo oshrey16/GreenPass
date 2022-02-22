@@ -24,3 +24,4 @@ pip install PyQt5
 ```
 https://build-system.fman.io/qt-designer-download
 ```
+pyuic5 [namefile].ui >  namefile.py
